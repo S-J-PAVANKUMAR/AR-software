@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,33 +23,57 @@
 <body>
 
 <a-scene
-    mindar-image="imageTargetSrc: assets/targets/targets.mind;"
+    mindar-image="imageTargetSrc: ASSETS/images/targets/targets.mind;"
     color-space="sRGB"
     renderer="colorManagement: true;"
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
-    <!-- Camera -->
-    <a-camera position="0 0 0" look-controls="enabled:false"></a-camera>
+    <!-- Load 3D Models -->
+    <a-assets>
 
-    <!-- Target -->
+        <a-asset-item
+            id="businessCard"
+            src="assets/models/business-card.glb">
+        </a-asset-item>
+
+        <a-asset-item
+            id="phone"
+            src="assets/models/phone.glb">
+        </a-asset-item>
+
+        <a-asset-item
+            id="table"
+            src="assets/models/table.glb">
+        </a-asset-item>
+
+    </a-assets>
+
+    <!-- Camera -->
+    <a-camera
+        position="0 0 0"
+        look-controls="enabled:false">
+    </a-camera>
+
+    <!-- Image Target -->
     <a-entity mindar-image-target="targetIndex:0">
 
-        <a-box
+        <!-- Business Card -->
+        <a-gltf-model
+            src="#businessCard"
             position="0 0 0"
-            color="red"
-            depth="0.5"
-            height="0.5"
-            width="0.5"
+            rotation="0 0 0"
+            scale="0.25 0.25 0.25"
             animation="property: rotation;
                        to:0 360 0;
-                       dur:3000;
-                       loop:true;">
-        </a-box>
+                       loop:true;
+                       dur:6000;">
+        </a-gltf-model>
 
     </a-entity>
 
 </a-scene>
 
 </body>
+
 </html>
