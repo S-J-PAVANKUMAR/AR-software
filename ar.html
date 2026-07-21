@@ -46,6 +46,7 @@
             id="table"
             src="assets/models/table.glb">
         </a-asset-item>
+        <img id="logo" src="assets/images/logo.png">
 
     </a-assets>
 
@@ -59,16 +60,18 @@
     <a-entity mindar-image-target="targetIndex:0">
 
         <!-- Business Card -->
-        <a-gltf-model
-            src="#businessCard"
-            position="0 0.5 0"
-            rotation="0 180 0"
-            scale="20 20 20"
-            animation="property: rotation;
-                       to:0 360 0;
-                       loop:true;
-                       dur:6000;">
-        </a-gltf-model>
+        <!-- Company Logo -->
+        <a-image
+            src="#logo"
+            position="0 0.4 0"
+            width="0.7"
+            height="0.7"
+            animation="property: scale;
+                       from: 0 0 0;
+                       to: 1 1 1;
+                       dur: 800;
+                       easing: easeOutBack;">
+        </a-image>
 
     </a-entity>
 
