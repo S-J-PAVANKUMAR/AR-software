@@ -35,6 +35,12 @@
     <a-camera
         position="0 0 0"
         look-controls="enabled:false">
+
+        <a-cursor
+            rayOrigin="mouse"
+            fuse="false">
+        </a-cursor>
+
     </a-camera>
 
     <a-entity mindar-image-target="targetIndex:0">
@@ -77,10 +83,28 @@
             width="0.15"
             height="0.15">
         </a-image>
+        <a-image
+            id="websiteBtn"
+            src="#website"
+            position="0 -0.15 0"
+            width="0.15"
+            height="0.15">
+        </a-image>
 
     </a-entity>
 
 </a-scene>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const websiteBtn = document.querySelector("#websiteBtn");
+
+    websiteBtn.addEventListener("click", () => {
+        window.open("https://chatgpt.com", "_blank");
+    });
+
+});
+</script>
 
 </body>
 </html>
