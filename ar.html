@@ -90,6 +90,7 @@
 AFRAME.registerComponent("open-link", {
   init: function () {
     this.el.addEventListener("click", () => {
+      alert("Website button clicked!");
       window.open("https://chatgpt.com", "_blank");
     });
   }
