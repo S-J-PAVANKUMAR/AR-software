@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My First WebAR</title>
 
-    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 
     <style>
@@ -34,9 +34,10 @@
 
     <a-camera
         position="0 0 0"
-        cursor="rayOrigin: mouse; fuse: false"
-        raycaster="objects: .clickable; far: 100">
+        cursor="rayOrigin: mouse"
+        raycaster="objects: .clickable">
     </a-camera>
+        
 
     <a-entity mindar-image-target="targetIndex:0">
 
@@ -71,17 +72,17 @@
             width="0.15"
             height="0.15">
         </a-image>
-        <a-box
+        <a-image
             id="websiteBtn"
             class="clickable"
             open-link
-            color="green"
+            src="#website"
             position="0 -0.15 0"
             depth="0.02"
             width="0.15"
             height="0.15">
             
-        </a-box>
+        </a-image>
 
     </a-entity>
 
