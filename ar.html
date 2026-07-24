@@ -91,28 +91,9 @@
 window.addEventListener("load", () => {
 
     const scene = document.querySelector("a-scene");
-    const camera = document.querySelector("a-camera");
 
-    scene.addEventListener("click", (event) => {
-
-        const mouse = new THREE.Vector2();
-
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-        const raycaster = new THREE.Raycaster();
-        raycaster.setFromCamera(mouse, camera.object3D.children[0]);
-
-        const websiteMesh =
-            document.querySelector("#websiteBtn").object3D.children[0];
-
-        const hits = raycaster.intersectObject(websiteMesh);
-
-        if (hits.length > 0) {
-            alert("Website Clicked!");
-            window.open("https://chatgpt.com", "_blank");
-        }
-
+    scene.addEventListener("click", () => {
+        alert("Scene Clicked");
     });
 
 });
